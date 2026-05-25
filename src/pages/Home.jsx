@@ -40,10 +40,10 @@ const DashboardMockup = () => (
           <span style={{ color: C.white, fontSize: 12, fontWeight: 600 }}>Recent Students</span>
         </div>
         {[
-          { name: 'Rahul Sharma', class: 'Class 10', status: 'Admitted' },
-          { name: 'Priya Patel', class: 'Class 8', status: 'Enquiry' },
-          { name: 'Amit Verma', class: 'Class 12', status: 'Admitted' },
-          { name: 'Sneha Gupta', class: 'Class 6', status: 'Follow-up' },
+          { name: 'Rahul Sharma', cls: 'Class 10', status: 'Admitted' },
+          { name: 'Priya Patel', cls: 'Class 8', status: 'Enquiry' },
+          { name: 'Amit Verma', cls: 'Class 12', status: 'Admitted' },
+          { name: 'Sneha Gupta', cls: 'Class 6', status: 'Follow-up' },
         ].map((r, i) => (
           <div key={i} style={{
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
@@ -51,7 +51,7 @@ const DashboardMockup = () => (
           }}>
             <div>
               <div style={{ fontSize: 12, fontWeight: 600, color: C.text }}>{r.name}</div>
-              <div style={{ fontSize: 10, color: C.textLight }}>{r.class}</div>
+              <div style={{ fontSize: 10, color: C.textLight }}>{r.cls}</div>
             </div>
             <span style={{
               fontSize: 10, fontWeight: 600, padding: '3px 8px', borderRadius: 20,
@@ -65,7 +65,7 @@ const DashboardMockup = () => (
   </div>
 )
 
-function useFadeIn() {
+function FadeIn({ children, delay = 0 }) {
   const ref = useRef()
   useEffect(() => {
     const el = ref.current
@@ -80,11 +80,6 @@ function useFadeIn() {
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
-  return ref
-}
-
-function FadeIn({ children, delay = 0 }) {
-  const ref = useFadeIn()
   return (
     <div ref={ref} style={{
       opacity: 0,
@@ -125,15 +120,8 @@ export default function Home() {
     transition: 'all 0.25s',
   }
 
-  const section = (bg) => ({
-    background: bg,
-    padding: '80px 24px',
-  })
-
-  const sectionInner = {
-    maxWidth: 1200,
-    margin: '0 auto',
-  }
+  const section = (bg) => ({ background: bg, padding: '80px 24px' })
+  const sectionInner = { maxWidth: 1200, margin: '0 auto' }
 
   const h2style = {
     fontSize: 'clamp(28px,4vw,40px)',
@@ -158,64 +146,44 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section style={{
-        background: C.heroGradient,
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}>
+      <section style={{ background: C.heroGradient, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <div style={{
-          flex: 1,
-          maxWidth: 1200,
-          margin: '0 auto',
+          flex: 1, maxWidth: 1200, margin: '0 auto',
           padding: '80px 24px 40px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 48,
-          flexWrap: 'wrap',
+          display: 'flex', alignItems: 'center', gap: 48, flexWrap: 'wrap',
         }}>
           <div style={{ flex: '1 1 380px' }}>
             <span style={{
-              background: C.gold,
-              color: C.dark,
-              fontSize: 13,
-              fontWeight: 700,
-              padding: '6px 14px',
-              borderRadius: 20,
-              display: 'inline-block',
-              marginBottom: 24,
+              background: C.gold, color: C.dark, fontSize: 13, fontWeight: 700,
+              padding: '6px 14px', borderRadius: 20, display: 'inline-block', marginBottom: 24,
             }}>
               🚀 School Opening Special
             </span>
             <h1 style={{
-              color: C.white,
-              fontSize: 'clamp(36px,5vw,56px)',
-              fontWeight: 800,
-              lineHeight: 1.2,
-              marginBottom: 20,
+              color: C.white, fontSize: 'clamp(36px,5vw,56px)',
+              fontWeight: 800, lineHeight: 1.2, marginBottom: 20,
             }}>
-              आपके Institution का<br />
+              Your Institution's<br />
               <span style={{ color: C.greenLight }}>Complete Digital Partner</span>
             </h1>
             <p style={{
               color: 'rgba(255,255,255,0.82)',
               fontSize: 'clamp(15px,2vw,18px)',
-              lineHeight: 1.7,
-              marginBottom: 36,
+              lineHeight: 1.7, marginBottom: 36,
             }}>
-              Enquiry से Admission तक | WhatsApp Automation |<br />
-              Printing &amp; Marketing — <strong style={{ color: C.greenLight }}>एक Platform पर</strong>
+              Enquiry to Admission | WhatsApp Automation |<br />
+              Printing &amp; Marketing — <strong style={{ color: C.greenLight }}>all on one platform</strong>
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <a href="https://app.instify.in/signup" style={btnGold}
                 onMouseEnter={e => e.currentTarget.style.background = C.goldLight}
                 onMouseLeave={e => e.currentTarget.style.background = C.gold}>
-                Free में शुरू करें →
+                Get Started Free →
               </a>
               <a href="https://app.instify.in/demo" style={btnOutline}
                 onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}>
-                Demo देखें
+                Watch Demo
               </a>
             </div>
           </div>
@@ -231,19 +199,14 @@ export default function Home() {
           borderTop: '1px solid rgba(255,255,255,0.15)',
         }}>
           <div style={{
-            maxWidth: 1200,
-            margin: '0 auto',
-            padding: '24px 24px',
-            display: 'flex',
-            justifyContent: 'space-around',
-            flexWrap: 'wrap',
-            gap: 16,
+            maxWidth: 1200, margin: '0 auto', padding: '24px 24px',
+            display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: 16,
           }}>
             {[
               { val: '1000+', label: 'Clients' },
               { val: '20+', label: 'Years Experience' },
               { val: '500+', label: 'Schools' },
-              { val: '₹0', label: 'से शुरू' },
+              { val: '₹0', label: 'to get started' },
             ].map(s => (
               <div key={s.label} style={{ textAlign: 'center', color: C.white }}>
                 <div style={{ fontSize: 'clamp(22px,3vw,32px)', fontWeight: 800, color: C.greenLight }}>{s.val}</div>
@@ -258,24 +221,19 @@ export default function Home() {
       <section style={section(C.white)}>
         <div style={sectionInner}>
           <FadeIn>
-            <h2 style={h2style}>क्या यह Problems आपकी भी हैं?</h2>
-            <p style={subStyle}>हर Institution यही face करती है</p>
+            <h2 style={h2style}>Do These Problems Sound Familiar?</h2>
+            <p style={subStyle}>Every institution faces the same challenges</p>
           </FadeIn>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             {[
-              { icon: '📋', title: 'Enquiry Track नहीं होती', body: 'कितने students आए, कितने गए, कितने convert हुए — कुछ पता नहीं' },
-              { icon: '📱', title: 'WhatsApp पर Manual काम', body: 'हर admission पर अलग message, हर fee reminder manually — बहुत time waste' },
-              { icon: '🖨️', title: 'Printing के लिए भटकना', body: 'ID cards यहाँ, certificates वहाँ, banners कहीं और — सब अलग-अलग जगह' },
+              { icon: '📋', title: 'No Enquiry Tracking', body: 'How many students came, how many left, how many converted — no visibility at all' },
+              { icon: '📱', title: 'Manual WhatsApp Work', body: 'A separate message for every admission, every fee reminder sent manually — massive time waste' },
+              { icon: '🖨️', title: 'Running Around for Printing', body: 'ID cards here, certificates there, banners somewhere else — everything in different places' },
             ].map((c, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div style={{
-                  flex: '1 1 260px',
-                  background: C.white,
-                  borderRadius: 16,
-                  padding: 28,
-                  borderLeft: `4px solid ${C.error}`,
-                  boxShadow: C.cardShadow,
-                  transition: 'all 0.25s',
+                  flex: '1 1 260px', background: C.white, borderRadius: 16, padding: 28,
+                  borderLeft: `4px solid ${C.error}`, boxShadow: C.cardShadow, transition: 'all 0.25s',
                 }}
                   onMouseEnter={e => cardHover(e, true)}
                   onMouseLeave={e => cardHover(e, false)}>
@@ -288,16 +246,11 @@ export default function Home() {
           </div>
           <FadeIn delay={300}>
             <div style={{
-              marginTop: 40,
-              background: `linear-gradient(135deg, ${C.green}, ${C.greenMid})`,
-              borderRadius: 16,
-              padding: '24px 32px',
-              textAlign: 'center',
-              color: C.white,
-              fontSize: 'clamp(16px,2.5vw,20px)',
-              fontWeight: 700,
+              marginTop: 40, background: `linear-gradient(135deg, ${C.green}, ${C.greenMid})`,
+              borderRadius: 16, padding: '24px 32px', textAlign: 'center',
+              color: C.white, fontSize: 'clamp(16px,2.5vw,20px)', fontWeight: 700,
             }}>
-              INSTIFY इन तीनों problems का एक solution है 👇
+              INSTIFY solves all three problems — on one platform 👇
             </div>
           </FadeIn>
         </div>
@@ -307,27 +260,23 @@ export default function Home() {
       <section style={section(C.bg)}>
         <div style={sectionInner}>
           <FadeIn>
-            <h2 style={h2style}>एक Platform — सब कुछ</h2>
-            <p style={subStyle}>जो आपको चाहिए वो सब INSTIFY में है</p>
+            <h2 style={h2style}>One Platform — Everything You Need</h2>
+            <p style={subStyle}>Everything you need is built into INSTIFY</p>
           </FadeIn>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 24 }}>
             {[
-              { icon: '📋', title: 'Enquiry Management', body: 'Walk-in से WhatsApp तक सब enquiries एक जगह track करें', accent: C.green },
-              { icon: '🎓', title: 'Admission Tracking', body: 'Enquiry को Admission में convert करने का complete system', accent: C.green },
-              { icon: '📱', title: 'WhatsApp Automation', body: 'Automatic messages — Enquiry confirm से Fee reminder तक सब automatic', accent: C.gold },
-              { icon: '📄', title: 'Document Builder', body: 'Certificates, ID Cards, Admit Cards, Result Sheets — 1 click में ready', accent: C.gold },
-              { icon: '🖨️', title: 'Print Ordering', body: 'Banners, Brochures, Visiting Cards सीधे Platform से order करें', accent: C.green },
-              { icon: '📊', title: 'Analytics Dashboard', body: 'Students, Revenue, Enquiries — सब data एक जगह देखें', accent: C.green },
+              { icon: '📋', title: 'Enquiry Management', body: 'Track all enquiries from walk-ins to WhatsApp in one place', accent: C.green },
+              { icon: '🎓', title: 'Admission Tracking', body: 'Complete system to convert enquiries into admissions', accent: C.green },
+              { icon: '📱', title: 'WhatsApp Automation', body: 'Automatic messages — from enquiry confirmation to fee reminders, all on autopilot', accent: C.gold },
+              { icon: '📄', title: 'Document Builder', body: 'Certificates, ID Cards, Admit Cards, Result Sheets — ready in 1 click', accent: C.gold },
+              { icon: '🖨️', title: 'Print Ordering', body: 'Order Banners, Brochures, Visiting Cards directly from the platform', accent: C.green },
+              { icon: '📊', title: 'Analytics Dashboard', body: 'Students, Revenue, Enquiries — all your data in one view', accent: C.green },
             ].map((f, i) => (
               <FadeIn key={i} delay={i * 80}>
                 <div style={{
-                  background: C.white,
-                  borderRadius: 16,
-                  padding: 28,
-                  borderTop: `4px solid ${f.accent}`,
-                  boxShadow: C.cardShadow,
-                  transition: 'all 0.25s',
-                  height: '100%',
+                  background: C.white, borderRadius: 16, padding: 28,
+                  borderTop: `4px solid ${f.accent}`, boxShadow: C.cardShadow,
+                  transition: 'all 0.25s', height: '100%',
                 }}
                   onMouseEnter={e => cardHover(e, true)}
                   onMouseLeave={e => cardHover(e, false)}>
@@ -345,33 +294,20 @@ export default function Home() {
       <section style={section(C.white)}>
         <div style={sectionInner}>
           <FadeIn>
-            <h2 style={h2style}>3 Steps में शुरू करें</h2>
+            <h2 style={h2style}>Get Started in 3 Steps</h2>
           </FadeIn>
           <div style={{ display: 'flex', gap: 32, flexWrap: 'wrap', marginTop: 48 }}>
             {[
-              { n: '1', title: 'Sign Up करें — Free में', body: 'बस email और institution name — 2 मिनट में account ready' },
-              { n: '2', title: 'Setup करें — 5 मिनट में', body: 'अपनी institution की details डालें, WhatsApp number connect करें' },
-              { n: '3', title: 'Manage करें — आज से', body: 'Enquiries आएंगी, admissions होंगी, सब track होगा automatically' },
+              { n: '1', title: 'Sign Up — It\'s Free', body: 'Just your email and institution name — account ready in 2 minutes' },
+              { n: '2', title: 'Set Up — 5 Minutes', body: 'Add your institution details and connect your WhatsApp number' },
+              { n: '3', title: 'Manage — Starting Today', body: 'Enquiries come in, admissions happen, everything tracked automatically' },
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 120}>
-                <div style={{
-                  flex: '1 1 260px',
-                  display: 'flex',
-                  gap: 20,
-                  alignItems: 'flex-start',
-                }}>
+                <div style={{ flex: '1 1 260px', display: 'flex', gap: 20, alignItems: 'flex-start' }}>
                   <div style={{
-                    width: 52,
-                    height: 52,
-                    borderRadius: '50%',
-                    background: C.green,
-                    color: C.white,
-                    fontSize: 22,
-                    fontWeight: 800,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
+                    width: 52, height: 52, borderRadius: '50%', background: C.green,
+                    color: C.white, fontSize: 22, fontWeight: 800,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                   }}>{s.n}</div>
                   <div>
                     <h3 style={{ fontSize: 18, fontWeight: 700, color: C.text, marginBottom: 8 }}>{s.title}</h3>
@@ -388,7 +324,7 @@ export default function Home() {
       <section style={section(C.bg)}>
         <div style={sectionInner}>
           <FadeIn>
-            <h2 style={h2style}>INSTIFY किसके लिए है?</h2>
+            <h2 style={h2style}>Who is INSTIFY For?</h2>
           </FadeIn>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 24, marginTop: 40 }}>
             {[
@@ -399,13 +335,8 @@ export default function Home() {
             ].map((c, i) => (
               <FadeIn key={i} delay={i * 80}>
                 <div style={{
-                  background: C.white,
-                  borderRadius: 16,
-                  padding: '32px 24px',
-                  textAlign: 'center',
-                  boxShadow: C.cardShadow,
-                  transition: 'all 0.25s',
-                  cursor: 'default',
+                  background: C.white, borderRadius: 16, padding: '32px 24px',
+                  textAlign: 'center', boxShadow: C.cardShadow, transition: 'all 0.25s', cursor: 'default',
                 }}
                   onMouseEnter={e => cardHover(e, true)}
                   onMouseLeave={e => cardHover(e, false)}>
@@ -423,23 +354,18 @@ export default function Home() {
       <section style={section(C.white)}>
         <div style={sectionInner}>
           <FadeIn>
-            <h2 style={h2style}>1000+ Institutions का भरोसा</h2>
+            <h2 style={h2style}>Trusted by 1000+ Institutions</h2>
           </FadeIn>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', marginTop: 40 }}>
             {[
-              { quote: 'INSTIFY से हमारी enquiry tracking बहुत आसान हो गई। पहले सब manually था, अब सब automatic है।', name: 'Ramesh Sharma', role: 'Principal, Gondia Public School' },
-              { quote: 'WhatsApp automation से हमारा time बचा और admissions भी बढ़े। Best investment for our institute.', name: 'Priya Deshmukh', role: 'Director, Excel Coaching, Nagpur' },
-              { quote: 'Printing orders अब directly platform से होती है। Rate भी कम मिलता है और quality भी अच्छी है।', name: 'Dr. Anjali Mehta', role: 'Skin Care Clinic, Raipur' },
+              { quote: 'INSTIFY made our enquiry tracking so much easier. Everything used to be manual — now it\'s all automatic.', name: 'Ramesh Sharma', role: 'Principal, Gondia Public School' },
+              { quote: 'WhatsApp automation saved us so much time and our admissions also increased. Best investment for our institute.', name: 'Priya Deshmukh', role: 'Director, Excel Coaching, Nagpur' },
+              { quote: 'Print orders now happen directly from the platform. We get better rates and better quality too.', name: 'Dr. Anjali Mehta', role: 'Skin Care Clinic, Raipur' },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div style={{
-                  flex: '1 1 280px',
-                  background: C.bg,
-                  borderRadius: 16,
-                  padding: 28,
-                  boxShadow: C.cardShadow,
-                  position: 'relative',
-                  transition: 'all 0.25s',
+                  flex: '1 1 280px', background: C.bg, borderRadius: 16, padding: 28,
+                  boxShadow: C.cardShadow, position: 'relative', transition: 'all 0.25s',
                 }}
                   onMouseEnter={e => cardHover(e, true)}
                   onMouseLeave={e => cardHover(e, false)}>
@@ -458,34 +384,25 @@ export default function Home() {
       <section style={{ background: C.heroGradient, padding: '80px 24px' }}>
         <div style={{ ...sectionInner, textAlign: 'center' }}>
           <FadeIn>
-            <h2 style={{ ...h2style, color: C.white }}>शुरू करें — बिल्कुल Free में</h2>
+            <h2 style={{ ...h2style, color: C.white }}>Start Completely Free</h2>
             <div style={{ display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap', margin: '32px 0' }}>
               {['Free', '₹299/month', '₹599/month'].map((p, i) => (
                 <div key={i} style={{
                   background: 'rgba(255,255,255,0.12)',
                   border: '1px solid rgba(255,255,255,0.25)',
-                  borderRadius: 12,
-                  padding: '16px 32px',
-                  color: C.white,
-                  fontSize: 20,
-                  fontWeight: 700,
+                  borderRadius: 12, padding: '16px 32px',
+                  color: C.white, fontSize: 20, fontWeight: 700,
                 }}>{p}</div>
               ))}
             </div>
             <Link to="/pricing" style={{
-              background: C.gold,
-              color: C.dark,
-              textDecoration: 'none',
-              borderRadius: 10,
-              padding: '14px 32px',
-              fontWeight: 800,
-              fontSize: 17,
-              display: 'inline-block',
-              transition: 'all 0.25s',
+              background: C.gold, color: C.dark, textDecoration: 'none',
+              borderRadius: 10, padding: '14px 32px', fontWeight: 800, fontSize: 17,
+              display: 'inline-block', transition: 'all 0.25s',
             }}
               onMouseEnter={e => e.currentTarget.style.background = C.goldLight}
               onMouseLeave={e => e.currentTarget.style.background = C.gold}>
-              Full Pricing देखें →
+              View Full Pricing →
             </Link>
           </FadeIn>
         </div>
@@ -495,22 +412,16 @@ export default function Home() {
       <section style={{ background: C.gold, padding: '32px 24px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 20 }}>
           <p style={{ fontSize: 'clamp(16px,2.5vw,22px)', fontWeight: 700, color: C.dark }}>
-            ⏰ 15 June से Schools खुल रहे हैं — क्या आप ready हैं?
+            ⏰ Schools reopen June 15 — are you ready?
           </p>
           <a href="https://app.instify.in/signup" style={{
-            background: C.dark,
-            color: C.white,
-            textDecoration: 'none',
-            borderRadius: 10,
-            padding: '13px 28px',
-            fontWeight: 700,
-            fontSize: 16,
-            whiteSpace: 'nowrap',
-            transition: 'all 0.2s',
+            background: C.dark, color: C.white, textDecoration: 'none',
+            borderRadius: 10, padding: '13px 28px', fontWeight: 700, fontSize: 16,
+            whiteSpace: 'nowrap', transition: 'all 0.2s',
           }}
             onMouseEnter={e => e.currentTarget.style.background = '#1a2a1f'}
             onMouseLeave={e => e.currentTarget.style.background = C.dark}>
-            अभी Setup करें
+            Set Up Now
           </a>
         </div>
       </section>
@@ -518,22 +429,16 @@ export default function Home() {
       {/* ── FINAL CTA ── */}
       <section style={{ background: C.bg, padding: '80px 24px', textAlign: 'center' }}>
         <FadeIn>
-          <h2 style={h2style}>आज ही INSTIFY शुरू करें</h2>
-          <p style={{ ...subStyle, marginBottom: 36 }}>Free account — कोई credit card नहीं</p>
+          <h2 style={h2style}>Start Using INSTIFY Today</h2>
+          <p style={{ ...subStyle, marginBottom: 36 }}>Free account — no credit card required</p>
           <a href="https://app.instify.in/signup" style={{
-            background: C.green,
-            color: C.white,
-            textDecoration: 'none',
-            borderRadius: 10,
-            padding: '16px 40px',
-            fontWeight: 800,
-            fontSize: 20,
-            display: 'inline-block',
-            transition: 'all 0.25s',
+            background: C.green, color: C.white, textDecoration: 'none',
+            borderRadius: 10, padding: '16px 40px', fontWeight: 800, fontSize: 20,
+            display: 'inline-block', transition: 'all 0.25s',
           }}
             onMouseEnter={e => { e.currentTarget.style.background = C.greenMid; e.currentTarget.style.transform = 'translateY(-2px)' }}
             onMouseLeave={e => { e.currentTarget.style.background = C.green; e.currentTarget.style.transform = 'translateY(0)' }}>
-            Free में शुरू करें →
+            Get Started Free →
           </a>
         </FadeIn>
       </section>

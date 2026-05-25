@@ -119,7 +119,7 @@ export default function Navbar() {
             onMouseEnter={e => e.currentTarget.style.background = C.greenMid}
             onMouseLeave={e => e.currentTarget.style.background = C.green}
           >
-            Free शुरू करें
+            Get Started Free
           </a>
           <button className="mobile-only" style={{ ...hamburger, display: 'none' }}
             onClick={() => setOpen(o => !o)} aria-label="Menu">
@@ -157,7 +157,7 @@ export default function Navbar() {
             padding: '14px 20px',
             fontSize: 16,
           }}>
-            Free शुरू करें
+            Get Started Free
           </a>
         </div>
       )}

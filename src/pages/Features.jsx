@@ -30,36 +30,36 @@ const features = [
   {
     icon: '📋',
     title: 'Enquiry Management',
-    subtitle: 'हर enquiry capture करें — कोई lead miss न हो',
+    subtitle: 'Capture every enquiry — never miss a lead',
     points: [
-      'Walk-in, Phone, WhatsApp सभी enquiries track करें',
+      'Track walk-in, phone and WhatsApp enquiries in one place',
       'Source tracking: Facebook, Walk-in, Reference, Online',
-      'Follow-up reminders और automatic alerts',
-      'Conversion rate analytics और reports',
+      'Follow-up reminders and automatic alerts',
+      'Conversion rate analytics and reports',
     ],
     accent: C.green,
   },
   {
     icon: '🎓',
     title: 'Admission Management',
-    subtitle: 'Enquiry को Admission में convert करें',
+    subtitle: 'Convert enquiries into admissions',
     points: [
-      'Complete student admission form with photo',
+      'Complete student admission form with photo upload',
       'Document collection checklist',
-      'Fee structure setup और payment tracking',
-      'Student profile history और updates',
+      'Fee structure setup and payment tracking',
+      'Full student profile history and updates',
     ],
     accent: C.greenMid,
   },
   {
     icon: '📱',
     title: 'WhatsApp Automation',
-    subtitle: 'सोते समय भी messages भेजता रहे',
+    subtitle: 'Messages go out even while you sleep',
     points: [
-      'Welcome message on new enquiry — automatic',
+      'Automatic welcome message on new enquiry',
       'Admission confirmation message',
-      'Fee payment reminder — auto-schedule',
-      'Result और notice notification',
+      'Auto-scheduled fee payment reminders',
+      'Result and notice notifications',
       'Bulk messaging to all students',
     ],
     accent: C.gold,
@@ -67,12 +67,12 @@ const features = [
   {
     icon: '📄',
     title: 'Document Builder',
-    subtitle: '1 click में professional documents',
+    subtitle: 'Professional documents in 1 click',
     points: [
       'ID Cards with student photo — custom design',
       'Certificates with digital signature support',
-      'Admit cards for exams — bulk generate',
-      'Result sheets — auto-fill from records',
+      'Exam admit cards — bulk generate',
+      'Result sheets — auto-filled from records',
       'Custom branded templates for your institution',
     ],
     accent: C.gold,
@@ -80,24 +80,24 @@ const features = [
   {
     icon: '🖨️',
     title: 'Print Ordering',
-    subtitle: 'Platform से directly printing order करें',
+    subtitle: 'Order printing directly from the platform',
     points: [
-      'Upload your design or use ready templates',
-      'Multiple vendors compare prices — best rate',
+      'Upload your design or use ready-made templates',
+      'Compare prices across multiple vendors — best rate guaranteed',
       'Track order status and delivery',
-      'Quality guaranteed — 20 years experience',
+      'Quality guaranteed — 20 years of printing expertise',
     ],
     accent: C.green,
   },
   {
     icon: '📊',
     title: 'Analytics Dashboard',
-    subtitle: 'Data से decisions लें',
+    subtitle: 'Make decisions from real data',
     points: [
-      'Daily / weekly / monthly enquiry count',
+      'Daily, weekly and monthly enquiry counts',
       'Admission conversion rate tracking',
-      'Revenue और fee collection dashboard',
-      'Export reports in Excel और PDF',
+      'Revenue and fee collection dashboard',
+      'Export reports in Excel and PDF',
     ],
     accent: C.greenMid,
   },
@@ -112,10 +112,10 @@ export default function Features() {
       <section style={{ background: C.heroGradient, padding: '96px 24px 80px', textAlign: 'center' }}>
         <FadeIn>
           <h1 style={{ color: C.white, fontSize: 'clamp(32px,5vw,52px)', fontWeight: 800, marginBottom: 16 }}>
-            INSTIFY की सभी Features
+            All INSTIFY Features
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.82)', fontSize: 18 }}>
-            एक Platform — हर जरूरत के लिए
+            One Platform — Built for Every Need
           </p>
         </FadeIn>
       </section>
@@ -126,18 +126,14 @@ export default function Features() {
         return (
           <section key={i} style={{ background: even ? C.white : C.bg, padding: '72px 24px' }}>
             <div style={{ ...sectionInner, display: 'flex', gap: 56, alignItems: 'center', flexWrap: 'wrap' }}>
-              {/* Icon side */}
               <FadeIn delay={100}>
                 <div style={{
                   flex: '0 0 auto',
                   order: even ? 0 : 1,
-                  width: 200,
-                  height: 200,
+                  width: 200, height: 200,
                   background: `linear-gradient(135deg, ${f.accent}22, ${f.accent}44)`,
                   borderRadius: 32,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 80,
                   border: `2px solid ${f.accent}33`,
                 }}>
@@ -145,20 +141,14 @@ export default function Features() {
                 </div>
               </FadeIn>
 
-              {/* Text side */}
               <FadeIn delay={200}>
                 <div style={{ flex: '1 1 300px', order: even ? 1 : 0 }}>
                   <div style={{
                     display: 'inline-block',
-                    background: `${f.accent}18`,
-                    color: f.accent,
-                    fontSize: 12,
-                    fontWeight: 700,
-                    padding: '4px 12px',
-                    borderRadius: 20,
-                    marginBottom: 12,
-                    textTransform: 'uppercase',
-                    letterSpacing: 1,
+                    background: `${f.accent}18`, color: f.accent,
+                    fontSize: 12, fontWeight: 700, padding: '4px 12px',
+                    borderRadius: 20, marginBottom: 12,
+                    textTransform: 'uppercase', letterSpacing: 1,
                   }}>
                     Feature {String(i + 1).padStart(2, '0')}
                   </div>
@@ -191,25 +181,19 @@ export default function Features() {
       <section style={{ background: C.heroGradient, padding: '80px 24px', textAlign: 'center' }}>
         <FadeIn>
           <h2 style={{ color: C.white, fontSize: 'clamp(28px,4vw,40px)', fontWeight: 800, marginBottom: 16 }}>
-            सभी Features — एक ही Platform पर
+            All Features — One Platform
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 17, marginBottom: 36 }}>
-            Free account से शुरू करें — upgrade जब चाहें
+            Start with a free account — upgrade whenever you're ready
           </p>
           <a href="https://app.instify.in/signup" style={{
-            background: C.gold,
-            color: C.dark,
-            textDecoration: 'none',
-            borderRadius: 10,
-            padding: '15px 36px',
-            fontWeight: 800,
-            fontSize: 18,
-            display: 'inline-block',
-            transition: 'all 0.25s',
+            background: C.gold, color: C.dark, textDecoration: 'none',
+            borderRadius: 10, padding: '15px 36px', fontWeight: 800, fontSize: 18,
+            display: 'inline-block', transition: 'all 0.25s',
           }}
             onMouseEnter={e => e.currentTarget.style.background = C.goldLight}
             onMouseLeave={e => e.currentTarget.style.background = C.gold}>
-            Free में शुरू करें →
+            Get Started Free →
           </a>
         </FadeIn>
       </section>
