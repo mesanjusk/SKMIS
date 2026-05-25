@@ -1,0 +1,18 @@
+export const C = {
+  green:        '#1a7a4a',
+  greenMid:     '#25a066',
+  greenLight:   '#34c97e',
+  gold:         '#d4a017',
+  goldLight:    '#f0c040',
+  dark:         '#0a1a0f',
+  bg:           '#f4f9f6',
+  white:        '#ffffff',
+  border:       '#d0e8d0',
+  text:         '#1a1a1a',
+  textGray:     '#555555',
+  textLight:    '#888888',
+  error:        '#c62828',
+  success:      '#1b5e20',
+  heroGradient: 'linear-gradient(135deg, #0a1a0f 0%, #1a7a4a 100%)',
+  cardShadow:   '0 2px 12px rgba(0,0,0,0.08)',
+}
