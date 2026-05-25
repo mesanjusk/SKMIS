@@ -27,23 +27,17 @@ function FadeIn({ children, delay = 0 }) {
 }
 
 const Check = ({ yes }) => (
-  <span style={{
-    color: yes ? C.success : C.textLight,
-    fontSize: 16,
-    fontWeight: 700,
-    marginRight: 8,
-    flexShrink: 0,
-  }}>
+  <span style={{ color: yes ? C.success : C.textLight, fontSize: 16, fontWeight: 700, marginRight: 8, flexShrink: 0 }}>
     {yes ? '✅' : '❌'}
   </span>
 )
 
 const faqs = [
-  { q: 'Free plan में credit card चाहिए?', a: 'नहीं — बिल्कुल free शुरू करें, कोई card की जरूरत नहीं।' },
-  { q: 'कभी भी cancel कर सकते हैं?', a: 'हाँ — कोई lock-in contract नहीं। जब चाहें cancel करें।' },
-  { q: 'Data secure है?', a: 'हाँ — आपका सारा data encrypted servers पर safe रहता है।' },
-  { q: 'Print orders पर extra charge?', a: 'सिर्फ actual printing cost — हमारा कोई hidden commission नहीं।' },
-  { q: 'Support Hindi में मिलेगा?', a: 'हाँ — Hindi और English दोनों में support available है।' },
+  { q: 'Do I need a credit card for the Free plan?', a: 'No — start completely free, no card required.' },
+  { q: 'Can I cancel at any time?', a: 'Yes — no lock-in contracts. Cancel whenever you like.' },
+  { q: 'Is my data secure?', a: 'Yes — all your data is stored safely on encrypted servers.' },
+  { q: 'Are there extra charges on print orders?', a: 'Only the actual printing cost — no hidden commission from us.' },
+  { q: 'Is support available in Hindi?', a: 'Yes — support is available in both Hindi and English.' },
 ]
 
 export default function Pricing() {
@@ -53,7 +47,7 @@ export default function Pricing() {
   const plans = [
     {
       name: 'Free',
-      price: yearly ? '₹0' : '₹0',
+      price: '₹0',
       period: '/month',
       badge: null,
       borderColor: '#cccccc',
@@ -61,9 +55,9 @@ export default function Pricing() {
       headerColor: C.text,
       btnBg: '#888',
       btnColor: C.white,
-      btnLabel: 'Free शुरू करें',
+      btnLabel: 'Get Started Free',
       features: [
-        { text: '5 Admissions/month', yes: true },
+        { text: '5 Admissions / month', yes: true },
         { text: 'Basic Enquiry tracking', yes: true },
         { text: '1 WhatsApp template', yes: true },
         { text: '1 Document template', yes: true },
@@ -84,7 +78,7 @@ export default function Pricing() {
       headerColor: C.white,
       btnBg: C.green,
       btnColor: C.white,
-      btnLabel: 'अभी शुरू करें',
+      btnLabel: 'Start Now',
       popular: true,
       features: [
         { text: 'Unlimited Admissions', yes: true },
@@ -94,7 +88,7 @@ export default function Pricing() {
         { text: 'Vendor marketplace', yes: true },
         { text: 'Basic Analytics', yes: true },
         { text: 'Priority support', yes: true },
-        { text: '1 free print order/month', yes: true },
+        { text: '1 free print order / month', yes: true },
         { text: 'Multiple branches', yes: false },
         { text: 'API access', yes: false },
       ],
@@ -109,7 +103,7 @@ export default function Pricing() {
       headerColor: C.dark,
       btnBg: C.gold,
       btnColor: C.dark,
-      btnLabel: 'Pro शुरू करें',
+      btnLabel: 'Start Pro',
       features: [
         { text: 'Everything in Starter', yes: true },
         { text: 'Multiple branches', yes: true },
@@ -132,7 +126,7 @@ export default function Pricing() {
             Simple Pricing
           </h1>
           <p style={{ fontSize: 18, color: C.textGray, marginBottom: 36 }}>
-            कोई hidden charges नहीं — जो दिखे वही लगे
+            No hidden charges — what you see is what you pay
           </p>
 
           {/* Toggle */}
@@ -153,7 +147,7 @@ export default function Pricing() {
               Yearly
               {yearly && <span style={{ background: C.gold, color: C.dark, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 20 }}>2 months FREE</span>}
             </button>
-            {!yearly && <span style={{ background: C.gold, color: C.dark, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 20, marginRight: 4 }}>2 months FREE →</span>}
+            {!yearly && <span style={{ background: C.gold, color: C.dark, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 20, marginRight: 4 }}>Save 2 months →</span>}
           </div>
         </FadeIn>
       </section>
@@ -164,22 +158,16 @@ export default function Pricing() {
           {plans.map((p, i) => (
             <FadeIn key={i} delay={i * 100}>
               <div style={{
-                flex: '1 1 280px',
-                background: C.white,
-                borderRadius: 20,
-                overflow: 'hidden',
+                flex: '1 1 280px', background: C.white, borderRadius: 20, overflow: 'hidden',
                 border: `${p.popular ? 3 : 1.5}px solid ${p.borderColor}`,
                 boxShadow: p.popular ? `0 8px 40px ${C.green}33` : C.cardShadow,
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'relative',
+                display: 'flex', flexDirection: 'column', position: 'relative',
               }}>
                 {p.badge && (
                   <div style={{
                     position: 'absolute', top: -1, right: 20,
                     background: C.gold, color: C.dark,
-                    fontSize: 11, fontWeight: 800,
-                    padding: '4px 14px', borderRadius: '0 0 8px 8px',
+                    fontSize: 11, fontWeight: 800, padding: '4px 14px', borderRadius: '0 0 8px 8px',
                   }}>{p.badge}</div>
                 )}
                 <div style={{ background: p.headerBg, padding: '28px 24px' }}>
@@ -204,16 +192,9 @@ export default function Pricing() {
                 </div>
                 <div style={{ padding: '0 24px 28px' }}>
                   <a href="https://app.instify.in/signup" style={{
-                    display: 'block',
-                    background: p.btnBg,
-                    color: p.btnColor,
-                    textDecoration: 'none',
-                    textAlign: 'center',
-                    borderRadius: 10,
-                    padding: '14px',
-                    fontWeight: 800,
-                    fontSize: 16,
-                    transition: 'all 0.2s',
+                    display: 'block', background: p.btnBg, color: p.btnColor,
+                    textDecoration: 'none', textAlign: 'center', borderRadius: 10,
+                    padding: '14px', fontWeight: 800, fontSize: 16, transition: 'all 0.2s',
                   }}
                     onMouseEnter={e => { e.currentTarget.style.opacity = '0.88'; e.currentTarget.style.transform = 'translateY(-1px)' }}
                     onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'translateY(0)' }}>
@@ -231,15 +212,12 @@ export default function Pricing() {
         <div style={{ maxWidth: 720, margin: '0 auto' }}>
           <FadeIn>
             <h2 style={{ fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 800, color: C.text, textAlign: 'center', marginBottom: 48 }}>
-              अक्सर पूछे जाने वाले सवाल
+              Frequently Asked Questions
             </h2>
           </FadeIn>
           {faqs.map((faq, i) => (
             <FadeIn key={i} delay={i * 80}>
-              <div style={{
-                borderBottom: `1px solid ${C.border}`,
-                marginBottom: 0,
-              }}>
+              <div style={{ borderBottom: `1px solid ${C.border}` }}>
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{
                   width: '100%', background: 'none', border: 'none', cursor: 'pointer',
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
@@ -249,8 +227,7 @@ export default function Pricing() {
                   <span style={{
                     fontSize: 20, color: C.green, fontWeight: 700,
                     transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0)',
-                    transition: 'transform 0.2s',
-                    flexShrink: 0, marginLeft: 16,
+                    transition: 'transform 0.2s', flexShrink: 0, marginLeft: 16,
                   }}>+</span>
                 </button>
                 {openFaq === i && (

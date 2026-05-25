@@ -65,7 +65,7 @@ export default function Footer() {
             <h4 style={heading}>Support</h4>
             <Link to="/contact" style={link}>Contact Us</Link>
             <a href="mailto:info@instify.in" style={link}>info@instify.in</a>
-            <a href="https://wa.me/91XXXXXXXXXX" style={link}>WhatsApp करें</a>
+            <a href="https://wa.me/91XXXXXXXXXX" style={link}>WhatsApp Us</a>
           </div>
 
           {/* Connect */}
