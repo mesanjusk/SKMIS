@@ -1,2 +1,0 @@
-# SKMIS
-SK DashBoard
