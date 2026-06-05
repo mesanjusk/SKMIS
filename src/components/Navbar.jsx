@@ -104,7 +104,7 @@ export default function Navbar() {
           <style>{`
             @media(max-width:768px){.desktop-nav{display:none!important;}.mobile-only{display:flex!important;}}
             @media(min-width:769px){.mobile-only{display:none!important;}}
-            .nav-link:hover{color:#1a7a4a!important;}
+            .nav-link:hover{color:#059669!important;}
           `}</style>
           {navLinks.map(l => (
             <Link key={l.to} to={l.to} className="nav-link" style={linkStyle(isActive(l.to))}>

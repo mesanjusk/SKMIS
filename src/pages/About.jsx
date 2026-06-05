@@ -54,7 +54,7 @@ export default function About() {
                 flex: '0 0 auto', width: 160, height: 160, borderRadius: '50%',
                 background: `linear-gradient(135deg, ${C.green}, ${C.greenMid})`,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: 72, boxShadow: '0 8px 32px rgba(26,122,74,0.3)',
+                fontSize: 72, boxShadow: '0 8px 32px rgba(5,150,105,0.3)',
               }}>
                 🏪
               </div>

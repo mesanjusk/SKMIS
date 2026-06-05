@@ -55,7 +55,7 @@ const DashboardMockup = () => (
             </div>
             <span style={{
               fontSize: 10, fontWeight: 600, padding: '3px 8px', borderRadius: 20,
-              background: r.status === 'Admitted' ? '#e8f5e9' : r.status === 'Enquiry' ? '#fff8e1' : '#e3f2fd',
+              background: r.status === 'Admitted' ? '#ECFDF5' : r.status === 'Enquiry' ? '#FFFBEB' : '#e3f2fd',
               color: r.status === 'Admitted' ? C.success : r.status === 'Enquiry' ? '#f57c00' : '#1565c0',
             }}>{r.status}</span>
           </div>
@@ -419,7 +419,7 @@ export default function Home() {
             borderRadius: 10, padding: '13px 28px', fontWeight: 700, fontSize: 16,
             whiteSpace: 'nowrap', transition: 'all 0.2s',
           }}
-            onMouseEnter={e => e.currentTarget.style.background = '#1a2a1f'}
+            onMouseEnter={e => e.currentTarget.style.background = '#022C22'}
             onMouseLeave={e => e.currentTarget.style.background = C.dark}>
             Set Up Now
           </a>
