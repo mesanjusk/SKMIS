@@ -44,11 +44,12 @@ export default function StructuredData() {
         '@type': 'SoftwareApplication',
         name: business.product,
         applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web',
+        operatingSystem: 'Web Browser',
         brand: {
           '@type': 'Brand',
           name: business.product,
         },
+        creator: { '@id': `${business.website}/#organization` },
         publisher: { '@id': `${business.website}/#organization` },
         offers: {
           '@type': 'Offer',

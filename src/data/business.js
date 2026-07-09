@@ -1,7 +1,7 @@
 export const business = {
   legalName: 'Mahi Creation',
   product: 'INSTIFY',
-  tagline: 'Institutions Simplified',
+  tagline: 'Business Management Software',
   phone: '+91 9373633633',
   phoneHref: 'tel:+919373633633',
   whatsappNumber: '919373633633',
@@ -11,5 +11,13 @@ export const business = {
   address: 'Gondia, Maharashtra, India',
   website: 'https://instify.in',
   operatedByLine: 'INSTIFY is a software platform developed and operated by Mahi Creation.',
+  shortOperatedByLine: 'Developed and Operated by Mahi Creation',
   legalDisclosure: 'This website and the INSTIFY platform are developed and operated by Mahi Creation.',
+  social: {
+    instagram: 'https://instagram.com/instify.in',
+    linkedin: null,
+    facebook: null,
+    youtube: null,
+    github: null,
+  },
 }

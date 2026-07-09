@@ -67,6 +67,7 @@ export default function Contact() {
         title="Contact Us"
         description="Get in touch with Mahi Creation, the team behind INSTIFY. Call, WhatsApp or email us for support and enquiries."
         path="/contact"
+        breadcrumb={[{ name: 'Contact', path: '/contact' }]}
       />
       {/* Hero */}
       <section style={{ background: C.heroGradient, padding: '96px 24px 64px', textAlign: 'center' }}>
@@ -178,7 +179,7 @@ export default function Contact() {
                         <label style={labelStyle}>Phone Number *</label>
                         <input name="phone" required type="tel" value={form.phone} onChange={handleChange}
                           onFocus={() => setFocused('phone')} onBlur={() => setFocused('')}
-                          style={getInputStyle('phone')} placeholder="+91 XXXXXXXXXX" />
+                          style={getInputStyle('phone')} placeholder="e.g. +91 98765 43210" />
                       </div>
                       <div>
                         <label style={labelStyle}>Institution Name *</label>

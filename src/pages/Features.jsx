@@ -113,6 +113,7 @@ export default function Features() {
         title="Features"
         description="Explore INSTIFY's features — Enquiry Management, Admission Tracking, WhatsApp Automation, Document Builder, Print Ordering and Analytics, built by Mahi Creation."
         path="/features"
+        breadcrumb={[{ name: 'Features', path: '/features' }]}
       />
       {/* Hero */}
       <section style={{ background: C.heroGradient, padding: '96px 24px 80px', textAlign: 'center' }}>

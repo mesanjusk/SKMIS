@@ -1,0 +1,17 @@
+{
+  "name": "INSTIFY | Business Management Software",
+  "short_name": "INSTIFY",
+  "description": "INSTIFY is a modern business management software platform developed by Mahi Creation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ECFDF5",
+  "theme_color": "#059669",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -124,6 +124,7 @@ export default function Pricing() {
         title="Pricing"
         description="Simple, transparent pricing for INSTIFY — the business management software from Mahi Creation. Start free, upgrade anytime."
         path="/pricing"
+        breadcrumb={[{ name: 'Pricing', path: '/pricing' }]}
       />
       {/* Hero */}
       <section style={{ background: C.bg, padding: '80px 24px 56px', textAlign: 'center' }}>

@@ -306,12 +306,13 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 24 }}>
             {[
               { icon: '🔒', title: 'Secure Cloud Platform', body: 'Your data is stored on encrypted, access-controlled cloud infrastructure' },
-              { icon: '⚡', title: 'Fast Support', body: 'Responsive support via WhatsApp, call and email — real people, real answers' },
+              { icon: '🤝', title: 'Reliable Support', body: 'Responsive support via WhatsApp, call and email — real people, real answers' },
+              { icon: '⚡', title: 'Fast Performance', body: 'A lightweight, optimized platform that loads fast on any connection' },
               { icon: '📱', title: 'WhatsApp Integration', body: 'Official WhatsApp Business integration for reliable, compliant messaging' },
               { icon: '📊', title: 'Modern Dashboard', body: 'A clean, intuitive dashboard that puts every metric within reach' },
-              { icon: '📶', title: 'Mobile Friendly', body: 'Fully responsive — manage your institution from any device, anywhere' },
               { icon: '🛡️', title: 'Data Security', body: 'Role-based access and encrypted storage keep your records protected' },
-              { icon: '☁️', title: 'Reliable Infrastructure', body: 'Built on cloud infrastructure engineered for uptime and performance' },
+              { icon: '📈', title: 'Scalable Architecture', body: 'Built to grow with you — from a single branch to multi-branch operations' },
+              { icon: '🔄', title: 'Regular Updates', body: 'New features and improvements shipped continuously based on real feedback' },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 70}>
                 <div style={{

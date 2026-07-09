@@ -13,7 +13,7 @@ export default function LegalLayout({ title, description, path, lastUpdated, chi
 
   return (
     <>
-      <SEO title={title} description={description} path={path} />
+      <SEO title={title} description={description} path={path} breadcrumb={[{ name: title, path }]} />
       <section style={{ background: C.heroGradient, padding: '72px 24px 48px', textAlign: 'center' }}>
         <h1 style={{ color: C.white, fontSize: 'clamp(28px,4vw,44px)', fontWeight: 800 }}>{title}</h1>
         <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 15, marginTop: 10 }}>Last updated: {lastUpdated}</p>
@@ -25,8 +25,7 @@ export default function LegalLayout({ title, description, path, lastUpdated, chi
             background: C.bg, border: `1px solid ${C.border}`, borderRadius: 16,
             padding: '20px 24px', marginBottom: 32, fontSize: 14.5, color: C.text, lineHeight: 1.7,
           }}>
-            This website and the {business.product} platform are developed and operated by{' '}
-            <strong>{business.legalName}</strong>.
+            <strong>{business.operatedByLine}</strong>
           </div>
 
           <LegalContext.Provider value={{ h2, p, ul }}>

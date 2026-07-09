@@ -39,6 +39,7 @@ export default function About() {
         title="About Us"
         description="INSTIFY is a business management software platform developed and operated by Mahi Creation, serving schools, institutes and businesses across India."
         path="/about"
+        breadcrumb={[{ name: 'About', path: '/about' }]}
       />
       {/* Hero */}
       <section style={{ background: C.heroGradient, padding: '96px 24px 80px', textAlign: 'center' }}>
@@ -68,14 +69,15 @@ export default function About() {
               <div style={{ flex: '1 1 300px' }}>
                 <h2 style={h2}>A Journey That Started in Gondia</h2>
                 <p style={body}>
-                  20 years ago, Sanju Ahuja started a small printing shop in Gondia.
-                  Today, over 1000 schools, institutes and clinics are our clients.
+                  20 years ago, {business.legalName} started as a small printing and marketing
+                  business in Gondia. Today, over 1000 schools, institutes and clinics are our
+                  clients.
                 </p>
                 <p style={{ ...body, marginTop: 16 }}>
                   We saw the same pattern — every institution struggles with Marketing,
-                  Management and Printing. INSTIFY is the solution built from those
-                  20 years of real-world experience. Built for the people who want to
-                  push education and service forward.
+                  Management and Printing. {business.product} is the solution built by{' '}
+                  {business.legalName} from those 20 years of real-world experience. Built for
+                  the people who want to push education and service forward.
                 </p>
               </div>
             </div>
@@ -181,20 +183,29 @@ export default function About() {
               background: C.bg, border: `2px solid ${C.border}`, borderRadius: 24,
               padding: 'clamp(32px,5vw,56px)',
             }}>
-              <h2 style={{ ...h2, textAlign: 'center' }}>About {business.legalName}</h2>
-              <p style={{ ...body, textAlign: 'center', maxWidth: 760, margin: '0 auto' }}>
-                {business.operatedByLine}
-              </p>
-              <p style={{ ...body, marginTop: 20, maxWidth: 760, margin: '20px auto 0' }}>
-                {business.legalName} has years of experience serving educational institutes, businesses,
-                and organizations through technology and digital solutions. INSTIFY was built to simplify
-                business operations, automate workflows, manage communication, and improve productivity
-                through modern cloud-based software.
-              </p>
-              <p style={{ ...body, marginTop: 16, maxWidth: 760, margin: '16px auto 0', fontWeight: 600, color: C.text }}>
-                Our mission is to build reliable, scalable, and easy-to-use business software for
-                organizations of every size.
-              </p>
+              <h2 style={{ ...h2, textAlign: 'center', marginBottom: 32 }}>About {business.legalName}</h2>
+
+              <div style={{ maxWidth: 760, margin: '0 auto' }}>
+                <h3 style={{ fontSize: 20, fontWeight: 800, color: C.green, marginBottom: 8 }}>Who We Are</h3>
+                <p style={body}>
+                  {business.product} is a cloud-based business management platform developed and
+                  operated by {business.legalName}.
+                </p>
+
+                <h3 style={{ fontSize: 20, fontWeight: 800, color: C.green, marginTop: 28, marginBottom: 8 }}>Our Mission</h3>
+                <p style={body}>
+                  To simplify business operations through automation and modern software.
+                </p>
+
+                <h3 style={{ fontSize: 20, fontWeight: 800, color: C.green, marginTop: 28, marginBottom: 8 }}>Why {business.product}</h3>
+                <p style={body}>
+                  {business.product} is built from {business.legalName}'s years of real-world
+                  business experience — designed for educational institutes, organizations, and
+                  growing businesses that need reliable, easy-to-use software to manage
+                  operations, automate communication, and scale with confidence.
+                </p>
+              </div>
+
               <div style={{
                 display: 'flex', gap: 24, flexWrap: 'wrap', justifyContent: 'center',
                 marginTop: 36, paddingTop: 28, borderTop: `1px solid ${C.border}`,
