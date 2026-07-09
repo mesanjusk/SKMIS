@@ -12,6 +12,9 @@ function Body() {
         bound by these Terms.
       </p>
 
+      <h2 style={h2}>Ownership</h2>
+      <p style={p}><strong>{business.ownershipClause}</strong></p>
+
       <h2 style={h2}>1. The Service</h2>
       <p style={p}>
         {business.product} provides tools for enquiry management, admission tracking, WhatsApp
@@ -105,7 +108,7 @@ export default function TermsAndConditions() {
   return (
     <LegalLayout
       title="Terms & Conditions"
-      description="Terms and conditions for using the INSTIFY platform, operated by Mahi Creation."
+      description="Terms and conditions for using the INSTIFY platform, operated by Sanju SK Digital - Mahi Creation."
       path="/terms-and-conditions"
       lastUpdated="July 9, 2026"
     >

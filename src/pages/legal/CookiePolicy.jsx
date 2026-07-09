@@ -57,7 +57,7 @@ export default function CookiePolicy() {
   return (
     <LegalLayout
       title="Cookie Policy"
-      description="Learn how INSTIFY, operated by Mahi Creation, uses cookies on its website and platform."
+      description="Learn how INSTIFY, operated by Sanju SK Digital - Mahi Creation, uses cookies on its website and platform."
       path="/cookie-policy"
       lastUpdated="July 9, 2026"
     >

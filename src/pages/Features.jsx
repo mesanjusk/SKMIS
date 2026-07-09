@@ -111,7 +111,7 @@ export default function Features() {
     <>
       <SEO
         title="Features"
-        description="Explore INSTIFY's features — Enquiry Management, Admission Tracking, WhatsApp Automation, Document Builder, Print Ordering and Analytics, built by Mahi Creation."
+        description="Explore INSTIFY's features — Enquiry Management, Admission Tracking, WhatsApp Automation, Document Builder, Print Ordering and Analytics, built by Sanju SK Digital - Mahi Creation."
         path="/features"
         breadcrumb={[{ name: 'Features', path: '/features' }]}
       />

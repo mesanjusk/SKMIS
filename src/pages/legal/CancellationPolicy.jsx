@@ -54,7 +54,7 @@ export default function CancellationPolicy() {
   return (
     <LegalLayout
       title="Cancellation Policy"
-      description="How to cancel your INSTIFY subscription or account, operated by Mahi Creation."
+      description="How to cancel your INSTIFY subscription or account, operated by Sanju SK Digital - Mahi Creation."
       path="/cancellation-policy"
       lastUpdated="July 9, 2026"
     >

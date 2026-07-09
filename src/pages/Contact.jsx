@@ -65,7 +65,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Us"
-        description="Get in touch with Mahi Creation, the team behind INSTIFY. Call, WhatsApp or email us for support and enquiries."
+        description="Get in touch with Sanju SK Digital - Mahi Creation, the team behind INSTIFY. Call, WhatsApp or email us for support and enquiries."
         path="/contact"
         breadcrumb={[{ name: 'Contact', path: '/contact' }]}
       />

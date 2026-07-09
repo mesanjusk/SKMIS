@@ -122,7 +122,7 @@ export default function Pricing() {
     <>
       <SEO
         title="Pricing"
-        description="Simple, transparent pricing for INSTIFY — the business management software from Mahi Creation. Start free, upgrade anytime."
+        description="Simple, transparent pricing for INSTIFY — the business management software from Sanju SK Digital - Mahi Creation. Start free, upgrade anytime."
         path="/pricing"
         breadcrumb={[{ name: 'Pricing', path: '/pricing' }]}
       />

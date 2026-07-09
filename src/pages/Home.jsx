@@ -148,7 +148,7 @@ export default function Home() {
     <>
       <SEO
         title="Business Management Software"
-        description="INSTIFY is a modern business management software platform developed by Mahi Creation to simplify operations, automate workflows, manage customers, and improve productivity."
+        description="INSTIFY is a modern business management software platform developed by Sanju SK Digital - Mahi Creation to simplify operations, automate workflows, manage customers, and improve productivity."
         path="/"
       />
       {/* ── HERO ── */}

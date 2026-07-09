@@ -51,7 +51,7 @@ export default function ShippingPolicy() {
   return (
     <LegalLayout
       title="Shipping Policy"
-      description="INSTIFY is a digital-only platform operated by Mahi Creation; learn about our print order shipping details."
+      description="INSTIFY is a digital-only platform operated by Sanju SK Digital - Mahi Creation; learn about our print order shipping details."
       path="/shipping-policy"
       lastUpdated="July 9, 2026"
     >

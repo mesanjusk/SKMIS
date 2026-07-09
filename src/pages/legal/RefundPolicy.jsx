@@ -57,7 +57,7 @@ export default function RefundPolicy() {
   return (
     <LegalLayout
       title="Refund Policy"
-      description="Refund policy for INSTIFY subscription plans, operated by Mahi Creation."
+      description="Refund policy for INSTIFY subscription plans, operated by Sanju SK Digital - Mahi Creation."
       path="/refund-policy"
       lastUpdated="July 9, 2026"
     >

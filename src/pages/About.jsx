@@ -37,7 +37,7 @@ export default function About() {
     <>
       <SEO
         title="About Us"
-        description="INSTIFY is a business management software platform developed and operated by Mahi Creation, serving schools, institutes and businesses across India."
+        description="INSTIFY is a business management software platform developed and operated by Sanju SK Digital - Mahi Creation, serving schools, institutes and businesses across India."
         path="/about"
         breadcrumb={[{ name: 'About', path: '/about' }]}
       />
@@ -175,7 +175,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* About Mahi Creation */}
+      {/* About the company */}
       <section style={{ background: C.white, padding: '80px 24px' }}>
         <div style={sectionInner}>
           <FadeIn>

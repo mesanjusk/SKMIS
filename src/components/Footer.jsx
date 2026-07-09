@@ -176,7 +176,7 @@ export default function Footer() {
           color: 'rgba(255,255,255,0.4)',
           fontSize: 13,
         }}>
-          © 2026 {business.legalName}. All Rights Reserved.
+          © 2026 INSTIFY — A product of {business.legalName}, Gondia, Maharashtra. All Rights Reserved.
         </div>
       </div>
     </footer>

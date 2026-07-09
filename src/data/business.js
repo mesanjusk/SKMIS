@@ -1,5 +1,5 @@
 export const business = {
-  legalName: 'Mahi Creation',
+  legalName: 'Sanju SK Digital - Mahi Creation',
   product: 'INSTIFY',
   tagline: 'Business Management Software',
   phone: '+91 9373633633',
@@ -10,9 +10,10 @@ export const business = {
   emailHref: 'mailto:myinstify@gmail.com',
   address: 'Gondia, Maharashtra, India',
   website: 'https://instify.in',
-  operatedByLine: 'INSTIFY is a software platform developed and operated by Mahi Creation.',
-  shortOperatedByLine: 'Developed and Operated by Mahi Creation',
-  legalDisclosure: 'This website and the INSTIFY platform are developed and operated by Mahi Creation.',
+  operatedByLine: 'INSTIFY is a software platform developed and operated by Sanju SK Digital - Mahi Creation.',
+  shortOperatedByLine: 'Developed and Operated by Sanju SK Digital - Mahi Creation',
+  legalDisclosure: 'This website and the INSTIFY platform are developed and operated by Sanju SK Digital - Mahi Creation.',
+  ownershipClause: 'Instify (https://instify.in) is owned, operated, and maintained by Sanju SK Digital - Mahi Creation, located in Gondia, Maharashtra, India.',
   social: {
     instagram: 'https://instagram.com/instify.in',
     linkedin: null,

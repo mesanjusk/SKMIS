@@ -12,6 +12,9 @@ function Body() {
         Service.
       </p>
 
+      <h2 style={h2}>Ownership</h2>
+      <p style={p}><strong>{business.ownershipClause}</strong></p>
+
       <h2 style={h2}>1. Information We Collect</h2>
       <p style={p}>We may collect the following categories of information:</p>
       <ul style={ul}>
@@ -105,7 +108,7 @@ export default function PrivacyPolicy() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      description="Read how Mahi Creation collects, uses, and protects your data on the INSTIFY platform."
+      description="Read how Sanju SK Digital - Mahi Creation collects, uses, and protects your data on the INSTIFY platform."
       path="/privacy-policy"
       lastUpdated="July 9, 2026"
     >
