@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { C } from '../styles/globals'
+import SEO from '../components/SEO'
 
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef()
@@ -108,6 +109,11 @@ export default function Features() {
 
   return (
     <>
+      <SEO
+        title="Features"
+        description="Explore INSTIFY's features — Enquiry Management, Admission Tracking, WhatsApp Automation, Document Builder, Print Ordering and Analytics, built by Mahi Creation."
+        path="/features"
+      />
       {/* Hero */}
       <section style={{ background: C.heroGradient, padding: '96px 24px 80px', textAlign: 'center' }}>
         <FadeIn>

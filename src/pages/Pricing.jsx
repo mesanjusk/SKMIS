@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { C } from '../styles/globals'
+import SEO from '../components/SEO'
 
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef()
@@ -119,6 +120,11 @@ export default function Pricing() {
 
   return (
     <>
+      <SEO
+        title="Pricing"
+        description="Simple, transparent pricing for INSTIFY — the business management software from Mahi Creation. Start free, upgrade anytime."
+        path="/pricing"
+      />
       {/* Hero */}
       <section style={{ background: C.bg, padding: '80px 24px 56px', textAlign: 'center' }}>
         <FadeIn>

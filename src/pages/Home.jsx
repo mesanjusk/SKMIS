@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { C } from '../styles/globals'
+import SEO from '../components/SEO'
 
 const DashboardMockup = () => (
   <div style={{
@@ -145,6 +146,11 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title="Business Management Software"
+        description="INSTIFY is a modern business management software platform developed by Mahi Creation to simplify operations, automate workflows, manage customers, and improve productivity."
+        path="/"
+      />
       {/* ── HERO ── */}
       <section style={{ background: C.heroGradient, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <div style={{
@@ -283,6 +289,41 @@ export default function Home() {
                   <div style={{ fontSize: 36, marginBottom: 14 }}>{f.icon}</div>
                   <h3 style={{ fontSize: 18, fontWeight: 700, color: C.text, marginBottom: 10 }}>{f.title}</h3>
                   <p style={{ fontSize: 15, color: C.textGray, lineHeight: 1.6 }}>{f.body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TRUST SIGNALS ── */}
+      <section style={section(C.bg)}>
+        <div style={sectionInner}>
+          <FadeIn>
+            <h2 style={h2style}>Why Businesses Trust INSTIFY</h2>
+            <p style={subStyle}>Built on secure, reliable technology — trusted by 1000+ institutions</p>
+          </FadeIn>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 24 }}>
+            {[
+              { icon: '🔒', title: 'Secure Cloud Platform', body: 'Your data is stored on encrypted, access-controlled cloud infrastructure' },
+              { icon: '⚡', title: 'Fast Support', body: 'Responsive support via WhatsApp, call and email — real people, real answers' },
+              { icon: '📱', title: 'WhatsApp Integration', body: 'Official WhatsApp Business integration for reliable, compliant messaging' },
+              { icon: '📊', title: 'Modern Dashboard', body: 'A clean, intuitive dashboard that puts every metric within reach' },
+              { icon: '📶', title: 'Mobile Friendly', body: 'Fully responsive — manage your institution from any device, anywhere' },
+              { icon: '🛡️', title: 'Data Security', body: 'Role-based access and encrypted storage keep your records protected' },
+              { icon: '☁️', title: 'Reliable Infrastructure', body: 'Built on cloud infrastructure engineered for uptime and performance' },
+            ].map((t, i) => (
+              <FadeIn key={i} delay={i * 70}>
+                <div style={{
+                  background: C.white, borderRadius: 16, padding: 28,
+                  border: `1px solid ${C.border}`, boxShadow: C.cardShadow,
+                  transition: 'all 0.25s', height: '100%',
+                }}
+                  onMouseEnter={e => cardHover(e, true)}
+                  onMouseLeave={e => cardHover(e, false)}>
+                  <div style={{ fontSize: 32, marginBottom: 12 }}>{t.icon}</div>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, color: C.text, marginBottom: 8 }}>{t.title}</h3>
+                  <p style={{ fontSize: 14, color: C.textGray, lineHeight: 1.6 }}>{t.body}</p>
                 </div>
               </FadeIn>
             ))}

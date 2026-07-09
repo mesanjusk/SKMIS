@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { C } from '../styles/globals'
+import { business } from '../data/business'
+import SEO from '../components/SEO'
 
 function FadeIn({ children, delay = 0 }) {
   const ref = useRef()
@@ -33,6 +35,11 @@ export default function About() {
 
   return (
     <>
+      <SEO
+        title="About Us"
+        description="INSTIFY is a business management software platform developed and operated by Mahi Creation, serving schools, institutes and businesses across India."
+        path="/about"
+      />
       {/* Hero */}
       <section style={{ background: C.heroGradient, padding: '96px 24px 80px', textAlign: 'center' }}>
         <FadeIn>
@@ -163,6 +170,54 @@ export default function About() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* About Mahi Creation */}
+      <section style={{ background: C.white, padding: '80px 24px' }}>
+        <div style={sectionInner}>
+          <FadeIn>
+            <div style={{
+              background: C.bg, border: `2px solid ${C.border}`, borderRadius: 24,
+              padding: 'clamp(32px,5vw,56px)',
+            }}>
+              <h2 style={{ ...h2, textAlign: 'center' }}>About {business.legalName}</h2>
+              <p style={{ ...body, textAlign: 'center', maxWidth: 760, margin: '0 auto' }}>
+                {business.operatedByLine}
+              </p>
+              <p style={{ ...body, marginTop: 20, maxWidth: 760, margin: '20px auto 0' }}>
+                {business.legalName} has years of experience serving educational institutes, businesses,
+                and organizations through technology and digital solutions. INSTIFY was built to simplify
+                business operations, automate workflows, manage communication, and improve productivity
+                through modern cloud-based software.
+              </p>
+              <p style={{ ...body, marginTop: 16, maxWidth: 760, margin: '16px auto 0', fontWeight: 600, color: C.text }}>
+                Our mission is to build reliable, scalable, and easy-to-use business software for
+                organizations of every size.
+              </p>
+              <div style={{
+                display: 'flex', gap: 24, flexWrap: 'wrap', justifyContent: 'center',
+                marginTop: 36, paddingTop: 28, borderTop: `1px solid ${C.border}`,
+              }}>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.textGray, textTransform: 'uppercase', letterSpacing: 0.5 }}>Business Name</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: C.text, marginTop: 4 }}>{business.legalName}</div>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.textGray, textTransform: 'uppercase', letterSpacing: 0.5 }}>Phone</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: C.text, marginTop: 4 }}>{business.phone}</div>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.textGray, textTransform: 'uppercase', letterSpacing: 0.5 }}>Email</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: C.text, marginTop: 4 }}>{business.email}</div>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.textGray, textTransform: 'uppercase', letterSpacing: 0.5 }}>Location</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: C.text, marginTop: 4 }}>{business.address}</div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 

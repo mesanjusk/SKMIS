@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://instify.in/sitemap.xml

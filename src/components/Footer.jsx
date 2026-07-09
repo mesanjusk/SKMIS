@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { C } from '../styles/globals'
+import { business } from '../data/business'
 
 const LogoWhite = () => (
   <svg width="130" height="34" viewBox="0 0 140 36" fill="none">
@@ -39,15 +40,15 @@ export default function Footer() {
   return (
     <footer style={{ background: C.dark }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '56px 24px 32px' }}>
-        <div style={{ display: 'flex', gap: 40, flexWrap: 'wrap', marginBottom: 48 }}>
+        <div style={{ display: 'flex', gap: 40, flexWrap: 'wrap', marginBottom: 40 }}>
           {/* Brand */}
-          <div style={{ ...col, minWidth: 200 }}>
+          <div style={{ ...col, minWidth: 220 }}>
             <LogoWhite />
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 13, marginTop: 12, lineHeight: 1.6 }}>
-              Institutions Simplified
+              {business.tagline}
             </p>
-            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, marginTop: 4 }}>
-              SANJU SK Digital, Gondia
+            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, marginTop: 10, lineHeight: 1.6 }}>
+              {business.operatedByLine}
             </p>
           </div>
 
@@ -60,12 +61,24 @@ export default function Footer() {
             <a href="https://app.instify.in" style={link}>App Login</a>
           </div>
 
+          {/* Legal */}
+          <div style={col}>
+            <h4 style={heading}>Legal</h4>
+            <Link to="/privacy-policy" style={link}>Privacy Policy</Link>
+            <Link to="/terms-and-conditions" style={link}>Terms &amp; Conditions</Link>
+            <Link to="/refund-policy" style={link}>Refund Policy</Link>
+            <Link to="/cancellation-policy" style={link}>Cancellation Policy</Link>
+            <Link to="/cookie-policy" style={link}>Cookie Policy</Link>
+            <Link to="/shipping-policy" style={link}>Shipping Policy</Link>
+          </div>
+
           {/* Support */}
           <div style={col}>
             <h4 style={heading}>Support</h4>
             <Link to="/contact" style={link}>Contact Us</Link>
-            <a href="mailto:info@instify.in" style={link}>info@instify.in</a>
-            <a href="https://wa.me/91XXXXXXXXXX" style={link}>WhatsApp Us</a>
+            <a href={business.emailHref} style={link}>{business.email}</a>
+            <a href={business.whatsappHref} style={link}>WhatsApp Us</a>
+            <a href={business.phoneHref} style={link}>{business.phone}</a>
           </div>
 
           {/* Connect */}
@@ -77,13 +90,37 @@ export default function Footer() {
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}>
                 <InstagramIcon />
               </a>
-              <a href="https://wa.me/91XXXXXXXXXX" style={{ color: 'rgba(255,255,255,0.7)', transition: 'color 0.2s' }}
+              <a href={business.whatsappHref} style={{ color: 'rgba(255,255,255,0.7)', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#25d366'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}>
                 <WhatsAppIcon />
               </a>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13 }}>instify.in</p>
+          </div>
+        </div>
+
+        {/* Business info strip */}
+        <div style={{
+          borderTop: '1px solid rgba(255,255,255,0.1)',
+          paddingTop: 24, paddingBottom: 24,
+          display: 'flex', gap: 32, flexWrap: 'wrap',
+        }}>
+          <div>
+            <div style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{business.legalName}</div>
+            <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13 }}>Legal entity operating the INSTIFY platform</div>
+          </div>
+          <div>
+            <div style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 700, fontSize: 14, marginBottom: 6 }}>Phone</div>
+            <a href={business.phoneHref} style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, textDecoration: 'none' }}>{business.phone}</a>
+          </div>
+          <div>
+            <div style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 700, fontSize: 14, marginBottom: 6 }}>Email</div>
+            <a href={business.emailHref} style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13, textDecoration: 'none' }}>{business.email}</a>
+          </div>
+          <div>
+            <div style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 700, fontSize: 14, marginBottom: 6 }}>Location</div>
+            <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 13 }}>{business.address}</div>
           </div>
         </div>
 
@@ -94,7 +131,7 @@ export default function Footer() {
           color: 'rgba(255,255,255,0.4)',
           fontSize: 13,
         }}>
-          © 2026 INSTIFY — SANJU SK Digital, Gondia, Maharashtra
+          © 2026 {business.legalName}. All Rights Reserved.
         </div>
       </div>
     </footer>
